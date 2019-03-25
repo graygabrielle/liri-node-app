@@ -38,15 +38,16 @@ function getMeSpotify(songName) {
     spotify.search({ type: 'track', query: songName }, function(err, data) {
         if (err) {
             console.log('Error occurred: ' + err);
-            return whatIsNext();
+            whatIsNext();
         } 
         else {
+            const song = data.tracks.items[0];
             output =
                 space + header +
-                space + "Song Name: " + data.tracks.items[0].name +
-                space + "Album Name: " + data.tracks.items[0].album.name +
-                space + "Artist Name: " + data.tracks.items[0].album.artists[0].name +
-                space + "URL: " + data.tracks.items[0].album.external_urls.spotify;
+                space + "Song Name: " + song.name +
+                space + "Album Name: " + song.album.name +
+                space + "Artist Name: " + song.artists[0].name +
+                space + "URL: " + song.album.external_urls.spotify;
 
             console.log(output);
             writeToLog(output);
@@ -69,7 +70,7 @@ let getMeMovie = function(movieName) {
     request(url, function(err, res, body) {
         if (err) {
             console.log('Error occurred: ' + err);
-            return whatIsNext();
+            whatIsNext();
 
         } 
         else {
@@ -129,6 +130,7 @@ const getMeConcert = function(artistName) {
 
 }
 
+
 //=============Reads from random.txt to return something "random"====================
 function doWhatItSays() {
     // Reads the random text file and passes it to the spotify function
@@ -138,7 +140,11 @@ function doWhatItSays() {
     });
 }
 
-const questions = [{
+
+//==========================first prompt to user============================
+function startPrompt(){
+
+    const questions = [{
         type: 'list',
         name: 'programs',
         message: 'What would you like to do?',
@@ -168,9 +174,9 @@ const questions = [{
             return answers.programs == 'Look up a song';
         }
     }
-];
+    ];
 
-inquirer
+    inquirer
     .prompt(questions)
     .then(answers => {
 
@@ -192,29 +198,33 @@ inquirer
                 whatIsNext();
         }
     });
+}
 
-const questions2 = [
-    {
-        type: 'list',
-        name: 'whatNext',
-        message: 'What would you like to do next?',
-        choices: ['Do something else...', 'Quit']
-    }
-]
 
+//======after results are returned to user, asks what they want to do next========
 function whatIsNext(){
+
+    const questions2 = [
+        {
+            type: 'list',
+            name: 'whatNext',
+            message: 'What would you like to do next?',
+            choices: ['Do something else...', 'Quit']
+        }
+    ]
+
     inquirer
     .prompt(questions2)
     .then(answers => {
-
         switch (answers.whatNext) {
             case 'Do something else...':
-                getMeSpotify(answers.songChoice);
+                startPrompt();
                 break;
             case 'Quit':
-                getMeMovie(answers.movieChoice);
-                break;
+                process.exit();
         }
     });
 }
-   
+
+//=========runs the function to start the inquirer for initial user prompt=======
+startPrompt();
