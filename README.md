@@ -5,9 +5,10 @@ This application runs through the terminal. When you run Liri with node, you wil
 If you want to try out LIRI, download all the files, and then run npm install to install all the dependencies in the package.json file. You will also need to set up your own spotify API keys. Once you have them, make a .env file in the liri-node-app directory, and put this in it:
 
 
-### Spotify API keys
+#### Spotify API keys
 
 SPOTIFY_ID=your-id-here
+
 SPOTIFY_SECRET=your-secret-here
 
 ## Demos
