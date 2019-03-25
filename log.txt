@@ -50,3 +50,20 @@
               Soonest concert date and time: 04-30-2019 07:00 pm
               Venue name: Oslo
               Venue location: London, United Kingdom
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+              Artist: Local Natives
+              Soonest concert date and time: 04-30-2019 07:00 pm
+              Venue name: Oslo
+              Venue location: London, United Kingdom
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+              Title: Home Alone
+              Year: 1990
+              Rated: PG
+              Country: USA
+              Language: English
+              Plot: An eight-year-old troublemaker must protect his house from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation.
+              Actors: Macaulay Culkin, Joe Pesci, Daniel Stern, John Heard
+              Rotten Tomatoes Rating: 65%
+              IMDB Rating: 7.5
