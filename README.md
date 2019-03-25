@@ -17,7 +17,7 @@ SPOTIFY_SECRET=your-secret-here
 ![Screenshot](./assets/liri-node-app.png)
 
 #### Demo video
-![Demo Video](./assets/demo.webm)
+![Demo Video](./assets/demo.mp4)
 
 
 ## Contributing & Support
