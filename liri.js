@@ -13,17 +13,13 @@ const header = "================= LIRI FOUND THIS FOR YOU...==================";
 
 //===================== writes returned data to the log file======================
 function writeToLog(data) {
-    fs.appendFile("log.txt", '\r\n\r\n', function(err) {
-        if (err) {
-            return console.log(err);
-        }
-    });
 
     fs.appendFile("log.txt", data, function(err) {
         if (err) {
             return console.log(err);
         }
-        console.log(space + "log.txt was updated!");
+        console.log(space + "log.txt was updated!" + "\n");
+        whatIsNext();
     });
 }
 
@@ -47,11 +43,11 @@ function getMeSpotify(songName) {
                 space + "Song Name: " + song.name +
                 space + "Album Name: " + song.album.name +
                 space + "Artist Name: " + song.artists[0].name +
-                space + "URL: " + song.album.external_urls.spotify;
+                space + "URL: " + song.album.external_urls.spotify +
+                "\n";
 
             console.log(output);
             writeToLog(output);
-            whatIsNext();
         }
     });
 
@@ -71,8 +67,11 @@ let getMeMovie = function(movieName) {
         if (err) {
             console.log('Error occurred: ' + err);
             whatIsNext();
-
-        } 
+        }; 
+        if (!res || !body) {
+            console.log('We couldn\'t find the movie you requested. Try another one.');
+            whatIsNext();
+        }
         else {
             let jsonData = JSON.parse(body);
             const output = 
@@ -86,11 +85,11 @@ let getMeMovie = function(movieName) {
             space + 'Plot: ' + jsonData.Plot +
             space + 'Actors: ' + jsonData.Actors +
             space + 'Tomato Rating: ' + jsonData.Ratings[1].Value +
-            space + 'IMDb Rating: ' + jsonData.imdbRating + "\n";
+            space + 'IMDb Rating: ' + jsonData.imdbRating +
+            "\n";
 
             console.log(output);
             writeToLog(output);
-            whatIsNext();
         }
     });
 };
@@ -109,21 +108,21 @@ const getMeConcert = function(artistName) {
             
             const concert = response.data[0];
             let dateTime = new Date(concert.datetime);
-            dateTime = moment(dateTime).format("MM-DD-YYYY hh:mm");
+            dateTime = moment(dateTime).format("MM-DD-YYYY hh:mm a");
             const output = 
             space + header +
             space + "Concert date and time: " + dateTime +
             space + "Venue name: " + concert.venue.name +
-            space + "Venue location: " + concert.venue.city + ", " + concert.venue.country;
+            space + "Venue location: " + concert.venue.city + ", " + concert.venue.country +
+            "\n";
 
             console.log(output);
             writeToLog(output);
-            whatIsNext();
         })
         
         .catch(function(err){
             if(err){
-                console.log("Sorry, there are no upcoming concerts for this band.")
+                console.log(space + "Sorry, there are no upcoming concerts for this band." + "\n")
                 whatIsNext();
             }
         })
@@ -131,12 +130,16 @@ const getMeConcert = function(artistName) {
 }
 
 
-//=============Reads from random.txt to return something "random"====================
+//=============Reads from random.txt to return something "random"================
 function doWhatItSays() {
     // Reads the random text file and passes it to the spotify function
     fs.readFile("random.txt", "utf8", function(error, data) {
+        if(error){
+            console.log(error);
+            whatIsNext();
+
+        }
         getMeSpotify(data);
-        whatIsNext();
     });
 }
 
@@ -195,7 +198,7 @@ function startPrompt(){
                 break;
             default:
                 console.log('LIRI doesn\'t know how to do that');
-                whatIsNext();
+                
         }
     });
 }
@@ -204,34 +207,23 @@ function startPrompt(){
 //======after results are returned to user, asks what they want to do next========
 function whatIsNext(){
 
-    const question2 = 
-    {
+    inquirer
+    .prompt([{
         type: 'list',
         name: 'whatNext',
         message: 'What would you like to do next?',
-        choices: ['Quit', 'Do something else...']
-    };
-    
+        choices: ['Quit', 'Do something else']
+    }])
+    .then(answer => {
 
-    inquirer
-    .prompt(question2)
-    .then(answers => {
-        switch (answers.whatNext) {
-            case 'Quit':
-                process.exit();
-                break;
-
-            case 'Do something else...':
-                startPrompt();
-                break;
-
-            default: 
-                console.log("Please select one of the two options.");
-                whatIsNext();
-
+        if (answer.whatNext === 'Quit'){
+            process.exit();
+        }
+        else {
+            startPrompt();
         }
     });
-}
+};
 
 //=========runs the function to start the inquirer for initial user prompt=======
 startPrompt();
