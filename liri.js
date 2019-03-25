@@ -144,7 +144,8 @@ function doWhatItSays() {
 //==========================first prompt to user============================
 function startPrompt(){
 
-    const questions = [{
+    const questions = 
+    [{
         type: 'list',
         name: 'programs',
         message: 'What would you like to do?',
@@ -173,8 +174,7 @@ function startPrompt(){
         when: function(answers) {
             return answers.programs == 'Look up a song';
         }
-    }
-    ];
+    }];
 
     inquirer
     .prompt(questions)
@@ -204,24 +204,31 @@ function startPrompt(){
 //======after results are returned to user, asks what they want to do next========
 function whatIsNext(){
 
-    const questions2 = [
-        {
-            type: 'list',
-            name: 'whatNext',
-            message: 'What would you like to do next?',
-            choices: ['Do something else...', 'Quit']
-        }
-    ]
+    const question2 = 
+    {
+        type: 'list',
+        name: 'whatNext',
+        message: 'What would you like to do next?',
+        choices: ['Quit', 'Do something else...']
+    };
+    
 
     inquirer
-    .prompt(questions2)
+    .prompt(question2)
     .then(answers => {
         switch (answers.whatNext) {
+            case 'Quit':
+                process.exit();
+                break;
+
             case 'Do something else...':
                 startPrompt();
                 break;
-            case 'Quit':
-                process.exit();
+
+            default: 
+                console.log("Please select one of the two options.");
+                whatIsNext();
+
         }
     });
 }

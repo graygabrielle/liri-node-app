@@ -53,3 +53,80 @@
               Venue name: Oslo
               Venue location: London, United Kingdom
 
+
+
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+              Song Name: Say My Name
+              Album Name: The Writing's On The Wall
+              Artist Name: Destiny's Child
+              URL: https://open.spotify.com/album/283NWqNsCA9GwVHrJk59CG
+
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+              Song Name: Say My Name
+              Album Name: The Writing's On The Wall
+              Artist Name: Destiny's Child
+              URL: https://open.spotify.com/album/283NWqNsCA9GwVHrJk59CG
+
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+              Song Name: Say My Name
+              Album Name: The Writing's On The Wall
+              Artist Name: Destiny's Child
+              URL: https://open.spotify.com/album/283NWqNsCA9GwVHrJk59CG
+
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+              Song Name: Say My Name
+              Album Name: The Writing's On The Wall
+              Artist Name: Destiny's Child
+              URL: https://open.spotify.com/album/283NWqNsCA9GwVHrJk59CG
+
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+              Song Name: Say My Name
+              Album Name: The Writing's On The Wall
+              Artist Name: Destiny's Child
+              URL: https://open.spotify.com/album/283NWqNsCA9GwVHrJk59CG
+
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+              Song Name: Say My Name
+              Album Name: The Writing's On The Wall
+              Artist Name: Destiny's Child
+              URL: https://open.spotify.com/album/283NWqNsCA9GwVHrJk59CG
+              ================= LIRI FOUND THIS FOR YOU...==================
+              Song Name: Say My Name
+              Album Name: The Writing's On The Wall
+              Artist Name: Destiny's Child
+              URL: https://open.spotify.com/album/283NWqNsCA9GwVHrJk59CG
+
+
+
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+              Song Name: Say My Name
+              Album Name: The Writing's On The Wall
+              Artist Name: Destiny's Child
+              URL: https://open.spotify.com/album/283NWqNsCA9GwVHrJk59CG
+              ================= LIRI FOUND THIS FOR YOU...==================
+              Title: Weekend at Bernie's
+              Year: 1989
+              Rated: PG-13
+              IMDB Rating: 6.4
+              Country: USA
+              Language: English
+              Plot: Two losers try to pretend that their murdered employer is really alive, leading the hitman to attempt to track him down to finish him off.
+              Actors: Andrew McCarthy, Jonathan Silverman, Catherine Mary Stewart, Terry Kiser
+              Tomato Rating: 54%
+              IMDb Rating: 6.4
+
+
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+              Song Name: Chinatown
+              Album Name: Gemini
+              Artist Name: Wild Nothing
+              URL: https://open.spotify.com/album/2UoAYpQzSNLuW47goFJE5x
+
