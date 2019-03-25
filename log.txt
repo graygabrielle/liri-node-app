@@ -1,16 +1,25 @@
 
-              ================= LIRI FOUND THIS FOR YOU...==================
-              Concert date and time: 04-30-2019 07:00 pm
-              Venue name: Oslo
-              Venue location: London, United Kingdom
 
               ================= LIRI FOUND THIS FOR YOU...==================
-              Concert date and time: 04-30-2019 07:00 pm
-              Venue name: Oslo
-              Venue location: London, United Kingdom
+              Song Name: Dark Days
+              Album Name: Sunlit Youth
+              Artist Name: Local Natives
+              URL: https://open.spotify.com/album/2qiPY1CqHGexT4yWrQ5uX0
 
               ================= LIRI FOUND THIS FOR YOU...==================
-              Artist: Local Natives
-              Concert date and time: 04-30-2019 07:00 pm
-              Venue name: Oslo
-              Venue location: London, United Kingdom
+              Song Name: Float On
+              Album Name: Good News For People Who Love Bad News
+              Artist Name: Modest Mouse
+              URL: https://open.spotify.com/album/0TGTGuc2vXv6ZECoAf52N0
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+              Title: Star Trek
+              Year: 2009
+              Rated: PG-13
+              IMDB Rating: 8.0
+              Country: USA, Germany
+              Language: English
+              Plot: The brash James T. Kirk tries to live up to his father's legacy with Mr. Spock keeping him in check as a vengeful Romulan from the future creates black holes to destroy the Federation one planet at a time.
+              Actors: Chris Pine, Zachary Quinto, Leonard Nimoy, Eric Bana
+              Tomato Rating: 94%
+              IMDb Rating: 8.0

@@ -79,13 +79,12 @@ let getMeMovie = function(movieName) {
             space + 'Title: ' + jsonData.Title +
             space + 'Year: ' + jsonData.Year +
             space + 'Rated: ' + jsonData.Rated +
-            space + 'IMDB Rating: ' + jsonData.imdbRating +
             space + 'Country: ' + jsonData.Country +
             space + 'Language: ' + jsonData.Language +
             space + 'Plot: ' + jsonData.Plot +
             space + 'Actors: ' + jsonData.Actors +
-            space + 'Tomato Rating: ' + jsonData.Ratings[1].Value +
-            space + 'IMDb Rating: ' + jsonData.imdbRating +
+            space + 'Rotten Tomatoes Rating: ' + jsonData.Ratings[1].Value +
+            space + 'IMDB Rating: ' + jsonData.imdbRating +
             "\n";
 
             console.log(output);
