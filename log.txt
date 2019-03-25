@@ -1,5 +1,4 @@
 
-
               ================= LIRI FOUND THIS FOR YOU...==================
               Song Name: Dark Days
               Album Name: Sunlit Youth
@@ -16,10 +15,38 @@
               Title: Star Trek
               Year: 2009
               Rated: PG-13
-              IMDB Rating: 8.0
               Country: USA, Germany
               Language: English
               Plot: The brash James T. Kirk tries to live up to his father's legacy with Mr. Spock keeping him in check as a vengeful Romulan from the future creates black holes to destroy the Federation one planet at a time.
               Actors: Chris Pine, Zachary Quinto, Leonard Nimoy, Eric Bana
-              Tomato Rating: 94%
-              IMDb Rating: 8.0
+              Rotten Tomatoes Rating: 94%
+              IMDB Rating: 8.0
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+              Artist: Foals
+              Soonest concert date and time: 03-27-2019 07:00 pm
+              Venue name: Brooklyn Bowl
+              Venue location: Las Vegas, United States
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+              Song Name: Say My Name
+              Album Name: The Writing's On The Wall
+              Artist Name: Destiny's Child
+              URL: https://open.spotify.com/album/283NWqNsCA9GwVHrJk59CG
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+              Title: Home Alone
+              Year: 1990
+              Rated: PG
+              Country: USA
+              Language: English
+              Plot: An eight-year-old troublemaker must protect his house from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation.
+              Actors: Macaulay Culkin, Joe Pesci, Daniel Stern, John Heard
+              Rotten Tomatoes Rating: 65%
+              IMDB Rating: 7.5
+
+              ================= LIRI FOUND THIS FOR YOU...==================
+              Artist: Local Natives
+              Soonest concert date and time: 04-30-2019 07:00 pm
+              Venue name: Oslo
+              Venue location: London, United Kingdom
