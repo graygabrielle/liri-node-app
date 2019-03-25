@@ -111,7 +111,8 @@ const getMeConcert = function(artistName) {
             dateTime = moment(dateTime).format("MM-DD-YYYY hh:mm a");
             const output = 
             space + header +
-            space + "Concert date and time: " + dateTime +
+            space + "Artist: " + concert.lineup[0] +
+            space + "Soonest concert date and time: " + dateTime +
             space + "Venue name: " + concert.venue.name +
             space + "Venue location: " + concert.venue.city + ", " + concert.venue.country +
             "\n";
