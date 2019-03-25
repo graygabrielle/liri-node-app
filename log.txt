@@ -1,63 +1,8 @@
 
 
-================= LIRI FOUND THIS FOR YOU...==================
-              Song Name: 'I WANT YOU BACK'
-              Album Name: Motown Legends: Jackson 5 - Never Can Say Goodbye
-              Artist Name: The Jackson 5
-              URL: https://open.spotify.com/album/0QalicmGWZvuRQ3qznxKIc
 
-================= LIRI FOUND THIS FOR YOU...==================
-              Song Name: 'FUNERAL SINGERS'
-              Album Name: Funeral Singers
-              Artist Name: Sylvan Esso
-              URL: https://open.spotify.com/album/3sxhYvPOJo2WYjEhvCaA2n
-
-
-              ================= Extraordinary Liri found this ...==================
-              Title: Everything Is Illuminated
-              Year: 2005
-              Rated: PG-13
-              IMDB Rating: 7.5
-              Country: USA
-              Language: English, Russian, Ukrainian
-              Plot: A young Jewish American man endeavors to find the woman who saved his grandfather during World War II in a Ukrainian village, that was ultimately razed by the Nazis, with the help of an eccentric local.
-              Actors: Eugene Hutz, Elijah Wood, Jonathan Safran Foer, Jana Hrabetova
-              Tomato Rating: 66%
-              IMDb Rating: 7.5
-
-
-================= LIRI FOUND THIS FOR YOU...==================
-              Song Name: 'NONE'
-              Album Name: Sixpence None the Richer
-              Artist Name: Sixpence None The Richer
-              URL: https://open.spotify.com/album/0PrcwzkQVEy4y6JPvT5bix
-
-================= LIRI FOUND THIS FOR YOU...==================
-              Song Name: 'WHAT'S MY AGE AGAIN'
-              Album Name: Enema Of The State
-              Artist Name: blink-182
-              URL: https://open.spotify.com/album/5qt11cWjSs5Gbqj2Wyfu38
-
-
-              ================= Extraordinary Liri found this ...==================
-              Title: Mr. Nobody
-              Year: 2009
-              Rated: R
-              IMDB Rating: 7.8
-              Country: Belgium, Germany, Canada, France, USA, UK
-              Language: English, Mohawk
-              Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
-              Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
-              Tomato Rating: 67%
-              IMDb Rating: 7.8
-
-
-================= Extraordinary Liri found this ...==================
-              Concert date and time: 04-30-2019 07:00
-              Venue name: Oslo
-              Venue location: London, United Kingdom
-
-================= Extraordinary Liri found this ...==================
-              Concert date and time: 04-30-2019 07:00
-              Venue name: Marquee Theater
-              Venue location: Tempe, United States
+              ================= LIRI FOUND THIS FOR YOU...==================
+              Song Name: Say My Name
+              Album Name: The Writing's On The Wall
+              Artist Name: Destiny's Child
+              URL: https://open.spotify.com/album/283NWqNsCA9GwVHrJk59CG

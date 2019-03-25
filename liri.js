@@ -7,12 +7,11 @@ const Spotify = require('node-spotify-api');
 const request = require('request');
 const inquirer = require('inquirer');
 const moment = require('moment');
-
-
 const space = "\n" + "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0";
-const header = "================= Extraordinary Liri found this ...==================";
+const header = "================= LIRI FOUND THIS FOR YOU...==================";
 
 
+//===================== writes returned data to the log file======================
 function writeToLog(data) {
     fs.appendFile("log.txt", '\r\n\r\n', function(err) {
         if (err) {
@@ -20,7 +19,7 @@ function writeToLog(data) {
         }
     });
 
-    fs.appendFile("log.txt", (data), function(err) {
+    fs.appendFile("log.txt", data, function(err) {
         if (err) {
             return console.log(err);
         }
@@ -29,65 +28,74 @@ function writeToLog(data) {
 }
 
 
-// =================================================================
-// Spotify function, Spotify api
+// ========================Spotify function, Spotify api==========================
 function getMeSpotify(songName) {
     let spotify = new Spotify(apiKeys.spotify);
-    // If there is no song name, set the song to Blink 182's What's my age again
+
     if (!songName) {
-        songName = "What's my age again";
+        songName = "Say my name";
     }
     spotify.search({ type: 'track', query: songName }, function(err, data) {
         if (err) {
             console.log('Error occurred: ' + err);
-            return;
-        } else {
+            return whatIsNext();
+        } 
+        else {
             output =
-                "================= LIRI FOUND THIS FOR YOU...==================" +
-                space + "Song Name: " + "'" + songName.toUpperCase() + "'" +
+                space + header +
+                space + "Song Name: " + data.tracks.items[0].name +
                 space + "Album Name: " + data.tracks.items[0].album.name +
                 space + "Artist Name: " + data.tracks.items[0].album.artists[0].name +
                 space + "URL: " + data.tracks.items[0].album.external_urls.spotify;
+
             console.log(output);
             writeToLog(output);
+            whatIsNext();
         }
     });
 
 }
 
+
+//===============================OMDB API, movie funciton=======================
 let getMeMovie = function(movieName) {
 
     if (!movieName) {
-        movieName = "Mr Nobody";
+        movieName = "Home Alone";
     }
-    //Get your OMDb API key creds here http://www.omdbapi.com/apikey.aspx
-    // t = movietitle, y = year, plot is short, then the API key
-    let urlHit = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
+  
+    const url = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
 
-    request(urlHit, function(err, res, body) {
+    request(url, function(err, res, body) {
         if (err) {
             console.log('Error occurred: ' + err);
-            return;
-        } else {
+            return whatIsNext();
+
+        } 
+        else {
             let jsonData = JSON.parse(body);
-            output = space + header +
-                space + 'Title: ' + jsonData.Title +
-                space + 'Year: ' + jsonData.Year +
-                space + 'Rated: ' + jsonData.Rated +
-                space + 'IMDB Rating: ' + jsonData.imdbRating +
-                space + 'Country: ' + jsonData.Country +
-                space + 'Language: ' + jsonData.Language +
-                space + 'Plot: ' + jsonData.Plot +
-                space + 'Actors: ' + jsonData.Actors +
-                space + 'Tomato Rating: ' + jsonData.Ratings[1].Value +
-                space + 'IMDb Rating: ' + jsonData.imdbRating + "\n";
+            const output = 
+            space + header +
+            space + 'Title: ' + jsonData.Title +
+            space + 'Year: ' + jsonData.Year +
+            space + 'Rated: ' + jsonData.Rated +
+            space + 'IMDB Rating: ' + jsonData.imdbRating +
+            space + 'Country: ' + jsonData.Country +
+            space + 'Language: ' + jsonData.Language +
+            space + 'Plot: ' + jsonData.Plot +
+            space + 'Actors: ' + jsonData.Actors +
+            space + 'Tomato Rating: ' + jsonData.Ratings[1].Value +
+            space + 'IMDb Rating: ' + jsonData.imdbRating + "\n";
 
             console.log(output);
             writeToLog(output);
+            whatIsNext();
         }
     });
 };
 
+
+//========================Bands in town API, get concert function=======================
 const getMeConcert = function(artistName) {
     if (!artistName) {
         artistName = "Local Natives";
@@ -100,29 +108,33 @@ const getMeConcert = function(artistName) {
             
             const concert = response.data[0];
             let dateTime = new Date(concert.datetime);
-            console.log(dateTime);
             dateTime = moment(dateTime).format("MM-DD-YYYY hh:mm");
-            const output = header +
+            const output = 
+            space + header +
             space + "Concert date and time: " + dateTime +
             space + "Venue name: " + concert.venue.name +
-            space + "Venue location: " + concert.venue.city + ", " + concert.venue.country
+            space + "Venue location: " + concert.venue.city + ", " + concert.venue.country;
 
             console.log(output);
             writeToLog(output);
+            whatIsNext();
         })
         
         .catch(function(err){
             if(err){
                 console.log("Sorry, there are no upcoming concerts for this band.")
+                whatIsNext();
             }
         })
 
 }
 
+//=============Reads from random.txt to return something "random"====================
 function doWhatItSays() {
     // Reads the random text file and passes it to the spotify function
     fs.readFile("random.txt", "utf8", function(error, data) {
         getMeSpotify(data);
+        whatIsNext();
     });
 }
 
@@ -177,6 +189,7 @@ inquirer
                 break;
             default:
                 console.log('LIRI doesn\'t know how to do that');
+                whatIsNext();
         }
     });
 
@@ -193,7 +206,7 @@ function whatIsNext(){
     inquirer
     .prompt(questions2)
     .then(answers => {
-        // Depending on which program the user chose to run it will do the function for that program
+
         switch (answers.whatNext) {
             case 'Do something else...':
                 getMeSpotify(answers.songChoice);
