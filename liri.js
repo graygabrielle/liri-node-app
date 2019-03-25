@@ -1,16 +1,4 @@
 
-
-
-//Liri takes the following arguments
-// * `concert-this`
-
-// * `spotify-this-song`
-
-// * `movie-this`
-
-// * `do-what-it-says`
-
-//these add other programs to this one
 require("dotenv").config();
 const axios = require('axios');
 const apiKeys = require("./keys.js");
@@ -25,7 +13,6 @@ const space = "\n" + "\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0";
 const header = "================= Extraordinary Liri found this ...==================";
 
 
-// Function that writes all the data from output to the logfile
 function writeToLog(data) {
     fs.appendFile("log.txt", '\r\n\r\n', function(err) {
         if (err) {
@@ -171,19 +158,10 @@ const questions = [{
     }
 ];
 
-const questions2 = [
-    {
-        type: 'list',
-        name: 'whatNext',
-        message: 'What would you like to do next?',
-        choices: ['Do something else...', 'Quit']
-    }
-]
-
 inquirer
     .prompt(questions)
     .then(answers => {
-        // Depending on which program the user chose to run it will do the function for that program
+
         switch (answers.programs) {
             case 'Look up a song':
                 getMeSpotify(answers.songChoice);
@@ -201,26 +179,28 @@ inquirer
                 console.log('LIRI doesn\'t know how to do that');
         }
     });
-function whatNext(){
+
+const questions2 = [
+    {
+        type: 'list',
+        name: 'whatNext',
+        message: 'What would you like to do next?',
+        choices: ['Do something else...', 'Quit']
+    }
+]
+
+function whatIsNext(){
     inquirer
     .prompt(questions2)
     .then(answers => {
         // Depending on which program the user chose to run it will do the function for that program
-        switch (answers.) {
-            case 'Look up a song':
+        switch (answers.whatNext) {
+            case 'Do something else...':
                 getMeSpotify(answers.songChoice);
                 break;
-            case 'Look up a movie':
+            case 'Quit':
                 getMeMovie(answers.movieChoice);
                 break;
-            case 'Find a concert':
-                getMeConcert(answers.artistName);
-                break;
-            case 'Look up something random':
-                doWhatItSays();
-                break;
-            default:
-                console.log('LIRI doesn\'t know that');
         }
     });
 }
